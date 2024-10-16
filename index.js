@@ -1,14 +1,16 @@
 const express = require("express");
 const app = express();
-const cors = require("cors");
+const cors = require('cors');
 const PORT = process.env.PORT || 3001;
 require('dotenv').config()
 
-// username -> gkeshari124
-// password -> hdSXT8zdr68peHg0
-
 // middlewares
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: 'https://foodapp-frontend-nqbi.onrender.com', // Replace with your frontend's URL
+    methods: 'GET,POST,PUT,DELETE',
+    credentials: true
+  }));
 app.use(express.json());
 
 
